@@ -29,3 +29,7 @@ Run it:
 # Run it at system startup
 
 t.b.d. (use systemd ...)
+
+# To do
+
+* handle Twitter delete request
