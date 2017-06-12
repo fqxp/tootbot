@@ -1,5 +1,6 @@
 import tweepy
 import json
+import logging
 
 
 class TwitterApi:
@@ -49,8 +50,9 @@ class StreamListener(tweepy.StreamListener):
             self._on_status(status)
 
     def on_error(self, status_code):
-        print('got twitter stream error: %d' % status_code)
+        logging.error('Twitter stream error: %d' % status_code)
+        return True
 
     def on_timeout(self):
-        print('TIMEOUT')
+        logging.error('Twitter stream timeout, continuing')
         return True

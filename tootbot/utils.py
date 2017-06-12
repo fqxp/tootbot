@@ -1,4 +1,5 @@
 from functools import wraps
+import logging
 import traceback
 
 
@@ -8,6 +9,6 @@ def failsafe(fn):
         try:
             return fn(*args, **kwargs)
         except Exception:
-            traceback.print_exc()
+            logging.error(traceback.format_exc())
 
     return wrapper
