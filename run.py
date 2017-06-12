@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 from tootbot.config import Config
 from tootbot.tootbot import TootBot
 from tootbot.twitter import user_cache
