@@ -23,8 +23,11 @@ class TwitterApi:
                 listener=stream_listener)
         stream.filter(follow=user_ids, track=track)
 
-    def get_user_id(self, username):
         return self.api.get_user(username).id
+
+    def get_user_id(self, screen_name):
+        user_info = self._api.get_user(screen_name)
+        return user_info.id
 
 
 class StreamListener(tweepy.StreamListener):
@@ -47,3 +50,7 @@ class StreamListener(tweepy.StreamListener):
 
     def on_error(self, status_code):
         print('got twitter stream error: %d' % status_code)
+
+    def on_timeout(self):
+        print('TIMEOUT')
+        return True

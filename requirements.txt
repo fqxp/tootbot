@@ -1,1 +1,15 @@
-tweepy
+appdirs==1.4.3
+dateutils==0.6.6
+greenlet==0.4.12
+Mastodon.py==1.0.7
+msgpack-python==0.4.8
+neovim==0.1.13
+oauthlib==2.0.2
+packaging==16.8
+pyparsing==2.2.0
+python-dateutil==2.6.0
+pytz==2017.2
+requests==2.14.2
+requests-oauthlib==0.8.0
+six==1.10.0
+tweepy==3.5.0

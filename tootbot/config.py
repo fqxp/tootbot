@@ -15,19 +15,18 @@ class Config:
     def twitter_auth_info(self):
         return self._config['twitter']
 
+    def mastodon_instance_url(self):
+        return self._config['mastodon']['instance_url']
+
     def all_users_to_follow(self):
-        print('%r' % self._config['bots'])
         return set(itertools.chain.from_iterable(
-            bot_config['twitter'].get('follow', [])
-            for bot_config in self._config['bots'].values()))
+            forwarder_config['twitter'].get('follow', [])
+            for forwarder_config in self.forwarder_configs()))
 
     def all_trackwords(self):
         return set(itertools.chain.from_iterable(
-            bot_config['twitter'].get('track', [])
-            for bot_config in self._config['bots'].values()))
+            forwarder_config['twitter'].get('track', [])
+            for forwarder_config in self.forwarder_configs()))
 
-    def bots(self):
-        return self._config['bots'].keys()
-
-    def get_bot(self, bot_name):
-        return self._config['bots'][bot_name]
+    def forwarder_configs(self):
+        return self._config['forwarders']

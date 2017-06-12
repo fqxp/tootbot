@@ -3,3 +3,5 @@ config.json
 users.json
 *.pyc
 __pycache__/
+*.secret
+config.json.*

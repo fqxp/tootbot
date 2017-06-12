@@ -1,6 +1,6 @@
 {
   "mastodon": {
-    "instance": "INSTANCE.social"
+    "instance_url": "INSTANCE.social"
   },
   "twitter": {
     "consumer_key": "TWITTER_CONSUMER_KEY",
@@ -8,8 +8,8 @@
     "access_token": "TWITTER_ACCESS_TOKEN",
     "access_token_secret": "TWITTER_ACCESS_TOKEN_SECRET"
   },
-  "bots": {
-    "news_bot": {
+  "forwarders": [
+    {
       "mastodon": {
         "username": "news_bot",
         "password": "123456"
@@ -18,21 +18,21 @@
         "follow": [
           "cnn",
           "spiegelonline"
-          ]
+        ]
       }
-    },
-    "raspberry_bot": {
+    }, {
       "mastodon": {
         "username": "raspberry_bot",
-        "password": "123456"
+        "password": "123456",
+        "private": true
       },
       "twitter": {
         "track": [
           "raspberry",
           "raspberrypi",
           "#raspi"
-          ]
+        ]
       }
     }
-  }
+  ]
 }
