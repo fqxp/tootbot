@@ -8,6 +8,10 @@ Will be a bot that uses the Twitter Stream API to forward tweets from certain
 users and/or with certain content (e. g., hashtags) to one or more Mastodon
 accounts.
 
+# Requirements
+* python 3
+* virtualenv
+
 # Installation
 
 Create and activate a virtualenv and install requirements:
