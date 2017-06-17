@@ -41,7 +41,10 @@ will follow a list of Twitter users and/or track a list of words.
 _tootbot_ collects all the trackwords and usernames and will open a connection
 to the Twitter streaming API to follow those.
 
-For each tweet coming in, _tootbot_ will try to determine which forwarder is listening.
+For each tweet coming in, _tootbot_ will try to determine which forwarder is
+listening. A tweet matches if a tweet was posted by one of the listed followers
+and if at least one trackword matches.
+
 For each matching forwarder, _tootbot_ will toot a message containing the text of
 the tweet after adding "(via _twitter user_, https://twitter.com/_twitter user
 screenname_)" to it. Retweets will be ignored to avoid spamming the Mastodon

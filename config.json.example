@@ -1,6 +1,16 @@
 {
   "mastodon": {
-    "instance_url": "INSTANCE.social"
+    "instance_url": "INSTANCE.social",
+    "accounts": {
+      "first_account": {
+        "username": "news_bot@example.com",
+        "password": "123456"
+      },
+      "second_account": {
+        "username": "other_bot@example.com",
+        "password": "654321"
+      }
+    }
   },
   "twitter": {
     "consumer_key": "TWITTER_CONSUMER_KEY",
@@ -11,19 +21,21 @@
   "forwarders": [
     {
       "mastodon": {
-        "username": "news_bot",
-        "password": "123456"
+        "account": "news_bot"
       },
       "twitter": {
         "follow": [
           "cnn",
           "spiegelonline"
+        ],
+        "track": [
+          "#dogs",
+          "#cats"
         ]
       }
     }, {
       "mastodon": {
-        "username": "raspberry_bot",
-        "password": "123456",
+        "account": "second_account",
         "private": true
       },
       "twitter": {

@@ -30,3 +30,6 @@ class Config:
 
     def forwarder_configs(self):
         return self._config['forwarders']
+
+    def mastodon_account_credentials(self, account):
+        return self._config['mastodon']['accounts'][account]
